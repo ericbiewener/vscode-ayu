@@ -1,22 +1,12 @@
-import * as ayu from 'ayu'
+import slate from './slate'
+
+const ayu = { slate }
 
 export type SchemeName = keyof typeof ayu
 
 const terminalColors = {
-  light: {
-    black: '#000000',
-    white: '#c7c7c7',
-    brightBlack: '#686868',
-    brightWhite: '#d1d1d1'
-  },
-  dark: {
-    black: ayu.dark.ui.line.hex(),
-    white: '#c7c7c7',
-    brightBlack: '#686868',
-    brightWhite: '#ffffff'
-  },
-  mirage: {
-    black: ayu.mirage.ui.line.hex(),
+  slate: {
+    black: ayu.slate.ui.line.hex(),
     white: '#c7c7c7',
     brightBlack: '#686868',
     brightWhite: '#ffffff'
@@ -26,7 +16,7 @@ const terminalColors = {
 export default (variant: SchemeName, bordered: boolean) => {
   const scheme = ayu[variant]
   return {
-    'type': variant === 'light' ? 'light' : 'dark',
+    'type': 'dark',
     'colors': {
       // Colour reference https://code.visualstudio.com/docs/getstarted/theme-color-reference
 

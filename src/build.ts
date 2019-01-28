@@ -5,7 +5,7 @@ import template, { SchemeName } from './template'
 const filePath = (variant: string, bordered: boolean) =>
   path.join(process.cwd(), `/ayu-${variant}${bordered ? '-bordered' : ''}.json`)
 
-;['light', 'dark', 'mirage'].map((variant: SchemeName) => {
+;['slate'].map((variant: SchemeName) => {
   const bordered = JSON.stringify(template(variant, true), null, '\t')
   const nonBordered = JSON.stringify(template(variant, false), null, '\t')
 
